@@ -1,0 +1,9 @@
+<form (ngSubmit)="performUpdate()">
+    <h2>Update Form</h2>
+    RollNo<input type="text" [(ngModel)]="updatedStudent.rollno" name="rollno" readonly><br>
+    Name<input type="text" [(ngModel)]="updatedStudent.name" name="name" readonly><br>
+    Attemps<input type="number" [(ngModel)]="updatedStudent.numberOfAttempts" name="numberOfAttempts" ><br>
+    Percenage<input type="number" [(ngModel)]="updatedStudent.percentage" name="percentage" ><br>
+    Subjects<input type="text" [(ngModel)]="updatedStudent.subjectsLearning" name="subjectsLearning" ><br>
+    <button type="submit" color="primary" mat-raised-button >Update</button>
+</form>

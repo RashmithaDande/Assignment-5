@@ -1,0 +1,37 @@
+<app-sort (criteriaEmitter)="sort($event)"></app-sort>
+<!-- <p><button (click) = "showStudents()"> Show Students </button></p> -->
+
+<table *ngIf="students.length>0">
+    <thead>
+        <tr>
+            <th>Roll No</th>
+            <th>Names</th>
+            <th>Attempts</th>
+            <th>Percentage</th>
+            <th>Subjects</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of students">
+            <td>{{s.rollno}}</td>
+            <td>{{s.name | uppercase}}</td>
+            <td>{{s.numberOfAttempts}}</td>
+            <td>{{s.percentage/100 | percent}}</td>
+            <td>
+                <ul *ngFor="let sub of s.subjectsLearning">
+                    <li>{{sub}}</li>
+                </ul>
+            </td>
+            <td>
+
+                <button color="warn" mat-raised-button (click)="deleteStudent(s.rollno)">Delete</button>&nbsp;
+                <button color="primary" mat-raised-button (click)="updateStudent(s)">Update</button>
+                <!-- <button mat-raised-button (click)="" color="warn">Delete</button> -->
+                <!-- <button mat-raised-button (click)="updateStudent(s)" color="primary">Update</button>  -->
+            </td>
+        </tr>
+    </tbody>
+</table>
+<span [class]="colorClass">{{message}}</span>
+<app-student-update *ngIf="updateClicked" [updatedStudent]="selectedStudent" (studentEmitter)="doUpdate($event)"></app-student-update>

@@ -1,0 +1,23 @@
+table,th,td{
+    border:1px solid;
+    text-align: center;
+}
+
+button{
+    background-color: green;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+.btnDelete{
+    background-color: red;
+}
+span{
+    font-size: 25px;
+}
+.success{
+    color:green
+}
+.error{
+    color:red
+}
